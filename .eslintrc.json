@@ -1,0 +1,64 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": ["standard-with-typescript", "plugin:react/recommended", "plugin:tailwindcss/recommended","plugin:prettier/recommended"],
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": ["react", "simple-import-sort", "unused-imports", "prettier", "jest-dom"],
+    "rules": {
+        // Typescript/Standart
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "react/react-in-jsx-scope": "off",
+        "@typescript-eslint/prefer-nullish-coalescing": "off",
+        "@typescript-eslint/strict-boolean-expressions": "off",
+        "@typescript-eslint/no-misused-promises": "off",
+
+        // React
+        "react/display-name": "off",
+
+        // Simple sort
+        "sort-imports": "off",
+        "import/order": "off",
+        "simple-import-sort/imports": "error",
+        "simple-import-sort/exports": "error",
+
+        // Unused imports
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": "off",
+        "unused-imports/no-unused-imports": "error",
+        "unused-imports/no-unused-vars": [
+            "error",
+            {
+                "vars": "all",
+                "varsIgnorePattern": "^_",
+                "args": "after-used",
+                "argsIgnorePattern": "^_"
+            }
+        ],
+
+        // Prettier
+        "prettier/prettier": [
+            "error",
+            {
+                "singleQuote": true,
+                "endOfLine": "auto",
+                "semi": false,
+                "spaceBrackets": true,
+                "tabWidth": 4
+            },
+            {
+                "usePrettierrc": false
+            }
+        ]
+    },
+    "overrides": [
+        {
+            "files": ["*.ts", "*.tsx", "*.js"],
+            "parser": "@typescript-eslint/parser"
+        }
+    ]
+}

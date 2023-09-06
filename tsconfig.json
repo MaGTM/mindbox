@@ -1,0 +1,33 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist/",
+        "noImplicitAny": true,
+        "module": "ESNext",
+        "target": "es5",
+        "jsx": "react-jsx",
+        "allowJs": true,
+        "moduleResolution": "node",
+        "allowSyntheticDefaultImports": true,
+        "strictNullChecks": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "baseUrl": ".",
+        "paths": {
+            "@app/*": ["./src/app/*"],
+            "@pages/*": ["./src/pages/*"],
+            "@shared/*": ["./src/shared/*"],
+            "@widgets/*": ["./src/widgets/*"],
+            "@features/*": ["./src/features/*"],
+        }
+    },
+    "ts-node": {
+        "compilerOptions": {
+            "module": "CommonJS"
+        }
+    },
+    "include": ["./**/*.ts", "./**/*.tsx",
+        "./config/jest/jest-setup"
+    ],
+    "exclude": ["node_modules", "build"],
+
+}
