@@ -37,6 +37,7 @@ export const Modal = (props: IModalProps) => {
                     }}
                     className="absolute left-0 top-0 flex h-screen w-screen items-center justify-center bg-modal-overlay"
                     onClick={onModalClose}
+                    data-testid="modal-overlay"
                 >
                     <motion.div
                         initial={{

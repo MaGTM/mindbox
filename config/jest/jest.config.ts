@@ -22,6 +22,7 @@ const config: Config = {
     transform: {
         '^.+\\.(ts|tsx)?$': 'ts-jest',
         '^.+\\.(js|jsx)$': 'babel-jest',
+        '^.+\\.svg$': '<rootDir>config/jest/svgTransform.js',
     },
     setupFilesAfterEnv: ['<rootDir>config/jest/jest-setup.ts'],
 
