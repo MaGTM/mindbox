@@ -57,7 +57,10 @@ export const AddTodoForm = (props: IAddTodoFormProps) => {
                 />
             </div>
             <div className="mt-2 flex items-center gap-4">
-                <Button text="Add" disabled={!isDirty || isLoading} />
+                <Button
+                    text="Add"
+                    disabled={!isDirty || isLoading || isSuccess}
+                />
                 <Button
                     text="Cancel"
                     theme={ButtonTheme.Secondary}

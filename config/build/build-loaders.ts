@@ -8,7 +8,7 @@ export const buildLoaders = (): webpack.RuleSetRule[] => {
     }
 
     const cssLoader = {
-        test: /\.s[ac]ss$/i,
+        test: /\.(s[ac]ss|css)$/i,
         use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
     }
 

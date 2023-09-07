@@ -1,11 +1,16 @@
-import { type ChangeEvent, type InputHTMLAttributes, useState } from 'react'
+import {
+    type ChangeEvent,
+    type InputHTMLAttributes,
+    memo,
+    useState,
+} from 'react'
 
 interface IInputProps
     extends Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange'> {
     onChange?: (value: string) => void
 }
 
-export const Input = (props: IInputProps) => {
+export const Input = memo((props: IInputProps) => {
     const { onChange, ...nativeProps } = props
 
     const [text, setText] = useState('')
@@ -30,4 +35,4 @@ export const Input = (props: IInputProps) => {
             />
         </label>
     )
-}
+})

@@ -1,4 +1,5 @@
 import './styles/global.scss'
+import 'react-loading-skeleton/dist/skeleton.css'
 
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'

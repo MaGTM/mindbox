@@ -4,6 +4,7 @@ import { useModal } from '@shared/lib/hooks'
 import { Button } from '@shared/ui'
 import { Todo } from '@widgets/todo-list/ui/todo.component'
 import clsx from 'clsx'
+import Skeleton from 'react-loading-skeleton'
 
 import { useGetTodos } from '../api/todo-list.api'
 
@@ -12,13 +13,11 @@ export const TodoList = () => {
 
     const { data: todos, isLoading } = useGetTodos()
 
-    console.log(todos, isLoading)
-
     return (
         <>
             <div
                 className={clsx(
-                    'h-[18.5rem] w-[18rem] rounded-[0.5rem] bg-block-bg-light dark:bg-block-bg-dark',
+                    'h-[18.5rem] w-[18rem] overflow-hidden rounded-[0.5rem] bg-block-bg-light dark:bg-block-bg-dark',
                     'flex flex-col items-center pt-[0.75rem] shadow-todo-list transition-colors duration-300',
                 )}
             >
@@ -28,6 +27,10 @@ export const TodoList = () => {
                     onClick={toggleHandler}
                 />
                 <div className="mt-4 flex max-h-full w-full flex-col overflow-auto">
+                    {isLoading && (
+                        <Skeleton count={4} className="h-[2.85rem]" />
+                    )}
+
                     {todos?.map((item) => {
                         return <Todo item={item} key={item.id} />
                     })}
